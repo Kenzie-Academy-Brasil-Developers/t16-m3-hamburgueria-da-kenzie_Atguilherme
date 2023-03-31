@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.header`
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   .header__container {
     display: flex;
@@ -30,10 +30,9 @@ export const StyledHeader = styled.header`
     border: none;
   }
 
-  input{
-        border: none;
-    }
-
+  input {
+    border: none;
+  }
 
   button {
     background-color: var(--primary);
