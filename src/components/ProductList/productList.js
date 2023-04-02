@@ -2,9 +2,8 @@ import styled from "styled-components";
 
 export const StyledProductList = styled.section`
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   width: 95vw;
-  max-width: 620px;
   height: 361px;
   margin-left: 3%;
 
@@ -12,16 +11,18 @@ export const StyledProductList = styled.section`
     display: flex;
     gap: 10px;
     width: 95vw;
-    max-width: 620px;
     height: 361px;
     overflow-x: auto;
+
+    li {
+      list-style: none;
+    }
   }
 
-  li {
-    list-style: none;
-  }
 
   @media (min-width: 769px) {
+    display: flex;
+    flex-direction: row;
     margin-top: 20px;
     flex-wrap: wrap;
     width: 50%;
@@ -38,16 +39,13 @@ export const StyledProductList = styled.section`
   }
 
   @media (min-width: 930px) {
-    width: 70%;
+    width: 87%;
     height: 87vh;
     max-width: 100%;
 
     .container__productList {
-      gap: 10px;
-      width: 95vw;
-      max-width: 620px;
-
-      
+      /* gap: 10px; */
+      width: 95%;
     }
   }
 `;

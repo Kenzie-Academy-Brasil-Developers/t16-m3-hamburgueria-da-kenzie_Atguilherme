@@ -9,9 +9,13 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     button{
-        cursor: pointer;
+        
         background: transparent;
         border: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
     }
 
     ul, ol{
@@ -82,6 +86,4 @@ export const GlobalStyle = createGlobalStyle`
 
     }
 
-`
-
-  
+`;

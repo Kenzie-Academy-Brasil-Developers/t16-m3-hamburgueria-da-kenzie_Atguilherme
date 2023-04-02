@@ -13,6 +13,16 @@ function App() {
   const [cartList, setCartList] = useState(
     cartLocalStorage ? JSON.parse(cartLocalStorage) : []
   );
+  const [search, setSearch] = useState("")
+
+  const searchResults = productList.filter(currentProduct => currentProduct.name.toLowerCase().includes(
+    search
+      .trim()
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+  ))
+
 
   const cartTotal = cartList.reduce((previousValue, itemPrice) => {
     return previousValue + itemPrice.price;
@@ -26,7 +36,7 @@ function App() {
         );
         setProductList(response.data);
       } catch (error) {
-        console.log(error);
+        toast.error(error);
       }
     }
     loadProduct();
@@ -36,7 +46,6 @@ function App() {
     localStorage.setItem("@BurguerKenzie", JSON.stringify(cartList));
   }, [cartList]);
 
-  // daria para usar o find ou o some o find retorna um objeto o some retorna um boolean
   const addProductToCart = (product) => {
     if (!cartList.some((cartProduct) => cartProduct.id === product.id)) {
       const newCartList = [...cartList, product];
@@ -55,31 +64,17 @@ function App() {
     setCartList([]);
   };
 
-  const [filter, setFilter] = useState("");
-
-  const filterSearch = (textToSearch) => {
-    const temNaLista = productList.filter((product) =>
-      product.name.toLowerCase().includes(
-        textToSearch
-          .trim()
-          .toLowerCase()
-          .normalize("NFD")
-          .replace(/[\u0300-\u036f]/g, "")
-      )
-    );
-
-    console.log(temNaLista);
-  };
-
-  //const filterRecipeList = recipeList.filter((recipe) => recipe.category === filter);
   return (
     <div className="App">
       <DefaultTemplate>
         <GlobalStyle />
         <ToastContainer autoClose={1500} />
-        <Header />
+        <Header setSearch={setSearch} searchResults={searchResults} />
         <DivContainer
           productList={productList}
+          searchResults={searchResults}
+          search={search}
+          setSearch={setSearch}
           addProductToCart={addProductToCart}
           removeProductFromCart={removeProductFromCart}
           removeAllProductsFromCart={removeAllProductsFromCart}

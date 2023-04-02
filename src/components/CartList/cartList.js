@@ -5,6 +5,7 @@ export const StyledCartList = styled.aside`
   align-self: center;
   width: 90%;
   height: 535px;
+  margin-top: 10px;
   background-color: var(--gray0);
 
   .cart__container {

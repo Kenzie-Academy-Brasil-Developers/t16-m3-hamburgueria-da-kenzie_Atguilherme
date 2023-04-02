@@ -4,6 +4,9 @@ import { CartList } from "../CartList";
 
 export const DivContainer = ({
   productList,
+  searchResults,
+  search,
+  setSearch,
   addProductToCart,
   removeProductFromCart,
   removeAllProductsFromCart,
@@ -14,6 +17,9 @@ export const DivContainer = ({
     <StyledDivContainer>
       <ProductList
         productList={productList}
+        searchResults={searchResults}
+        search={search}
+        setSearch={setSearch}
         addProductToCart={addProductToCart}
         removeProductFromCart={removeProductFromCart}
       />

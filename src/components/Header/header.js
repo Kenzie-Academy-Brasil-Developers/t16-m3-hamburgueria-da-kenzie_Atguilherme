@@ -25,7 +25,7 @@ export const StyledHeader = styled.header`
     height: 60px;
   }
 
-  .div__search {
+  .form__search {
     background-color: #ffffff;
     border: none;
   }
@@ -36,6 +36,7 @@ export const StyledHeader = styled.header`
 
   button {
     background-color: var(--primary);
+    transition: 1s;
     :hover {
       background-color: var(--primary-50);
     }

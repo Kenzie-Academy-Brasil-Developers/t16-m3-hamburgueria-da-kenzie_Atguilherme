@@ -19,9 +19,7 @@ export const CartItem = ({ cartItem, removeProductFromCart }) => {
               btnStyle={"btn-sm-gray"}
               type="button"
               onClick={() => removeProductFromCart(cartItem.id)}
-            >
-              Remover
-            </StyledButton>
+            >Remover</StyledButton>
           </div>
         </div>
       </li>

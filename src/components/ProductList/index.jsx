@@ -1,11 +1,13 @@
 import { ProductCard } from "./Product";
 import { StyledProductList } from "./productList";
 
-export const ProductList = ({ productList, addProductToCart }) => {
+export const ProductList = ({ productList, addProductToCart, searchResults, search, setSearch }) => {
+
+  const currentProductList = search !== "" ? searchResults : productList
   return (
     <StyledProductList productList={productList}>
       <ul className="container__productList">
-        {productList.map((product) => (
+        {currentProductList.map((product) => (
           <li key={product.id}>
             <ProductCard
               product={product}

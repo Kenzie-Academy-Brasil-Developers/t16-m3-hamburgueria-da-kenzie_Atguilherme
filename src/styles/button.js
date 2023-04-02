@@ -16,6 +16,7 @@ export const StyledButton = styled.button`
         width: 106px;
         background-color: var(--primary);
         color: #ffffff;
+        transition: 1s;
         :hover {
           background-color: var(--primary-50);
         }
@@ -27,6 +28,7 @@ export const StyledButton = styled.button`
         font-size: 16px;
         font-weight: 600;
         width: 90%;
+        transition: 1s;
         :hover {
           background-color: var(--gray50);
           color: var(--gray20);
@@ -34,13 +36,15 @@ export const StyledButton = styled.button`
       `;
     } else if (btnStyle === "btn-sm-gray") {
       return css`
-        display: flex;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
         width: 61px;
         height: 20px;
         border-radius: 4px;
         background-color: var(--gray20);
-        padding: 5px 10px;
         color: var(--gray50);
+        transition: 1s;
         :hover {
           background-color: var(--gray50);
           color: var(--gray20);
@@ -50,5 +54,4 @@ export const StyledButton = styled.button`
     }
   }}
 
-  transition: 1s;
 `;
